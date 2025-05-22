@@ -1,6 +1,6 @@
-# 🔐 Password Strength Checker
+# 🔐 Password Strength Checker (GUI)
 
-This is a beginner-friendly Python tool that checks the strength of a password based on:
+This is a beginner-friendly Python tool with a graphical user interface (GUI) built using Tkinter. It checks the strength of a password based on:
 
 - Length (at least 8 characters)
 - Uppercase letters
@@ -8,15 +8,17 @@ This is a beginner-friendly Python tool that checks the strength of a password b
 - Digits
 - Special characters
 
-### 🧠 How it works
-It uses regular expressions to check for different types of characters, and gives a rating:
-- **Weak**
-- **Moderate**
-- **Strong**
+## 🖥️ Features
+- Easy-to-use GUI window
+- Password input field (characters hidden for privacy)
+- Button to check password strength
+- Displays result instantly in the window
 
-### ▶️ To Run:
-1. Install Python if you haven't already
-2. Save the script as `password_checker.py`
-3. Open a terminal and run:
-   ```bash
-   python password_checker.py
+## ▶️ How to Run:
+1. Make sure Python is installed on your system
+2. Save the script as `password_checker_gui.py`
+3. Open your terminal and navigate to the folder containing the script
+4. Run the script with:
+
+```bash
+python password_checker_gui.py
