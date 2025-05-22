@@ -1,4 +1,6 @@
 import re
+import tkinter as tk
+from tkinter import messagebox
 
 def check_password_strength(password):
     length_error = len(password) < 8
@@ -19,8 +21,30 @@ def check_password_strength(password):
 
     return strength
 
-# --- Run it interactively ---
-if __name__ == "__main__":
-    password = input("Enter your password: ")
+def on_check():
+    password = entry.get()
+    if not password:
+        messagebox.showwarning("Input Error", "Please enter a password.")
+        return
     result = check_password_strength(password)
-    print(f"Your password is: {result}")
+    result_label.config(text=f"Password Strength: {result}")
+
+# Set up the window
+root = tk.Tk()
+root.title("Password Strength Checker")
+root.geometry("350x150")
+root.resizable(False, False)
+
+# Widgets
+tk.Label(root, text="Enter Password:").pack(pady=5)
+entry = tk.Entry(root, show="*")  # Hide password characters
+entry.pack(pady=5)
+
+check_button = tk.Button(root, text="Check Strength", command=on_check)
+check_button.pack(pady=5)
+
+result_label = tk.Label(root, text="Password Strength: ")
+result_label.pack(pady=5)
+
+# Run the app
+root.mainloop()
